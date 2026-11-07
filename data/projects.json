@@ -1,0 +1,212 @@
+{
+  "collected_at": "2026-11-07T11:25:56-03:00",
+  "profile": {
+    "login": "Jp-mainieri",
+    "name": "João Pedro Panza Mainieri",
+    "avatar_url": "https://avatars.githubusercontent.com/u/137027451?s=64&v=4",
+    "url": "https://github.com/Jp-mainieri",
+    "source_url": "https://github.com/Jp-mainieri"
+  },
+  "excluded_note": "Ignorados: forks sem commits próprios (NeuraMarket, ES-PI3-2026-T2-G04), o próprio radar-de-hackathons, repositórios só de estudo/template e repositórios sem conteúdo descritivo.",
+  "projects": [
+    {
+      "name": "relay",
+      "url": "https://github.com/Jp-mainieri/relay",
+      "description": "Relay — agente de audio ambiental para passagem de turno (hackathon)",
+      "languages": null,
+      "topics": [],
+      "readme_summary": "Agente de áudio que escuta a passagem de turno entre operadores em ambientes logísticos e industriais, confere via LLM (Structured Outputs) se o checklist crítico foi coberto, avisa por voz o que faltou e publica um resumo estruturado no Slack do gestor. Backend FastAPI com WebSocket.",
+      "tags": [
+        "ia",
+        "logistica",
+        "gestao",
+        "web"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/relay"
+    },
+    {
+      "name": "finn",
+      "url": "https://github.com/Jp-mainieri/finn",
+      "description": "Finn — assistente de voz para o carro (Spotify + Waze) com agentes A2A",
+      "languages": null,
+      "topics": [],
+      "readme_summary": "README é o modelo padrão do Next.js (create-next-app); a descrição do repositório informa um assistente de voz para o carro integrado a Spotify e Waze, com agentes A2A.",
+      "tags": [
+        "ia",
+        "web"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/finn"
+    },
+    {
+      "name": "scanini",
+      "url": "https://github.com/Jp-mainieri/scanini",
+      "description": null,
+      "languages": [
+        "JavaScript 59.6%",
+        "HTML 40.4%"
+      ],
+      "topics": [],
+      "readme_summary": "PWA para colecionadores do álbum Panini Copa 2026: escaneia figurinhas com IA (Gemini), controla o que tem e o que falta. Backend em Cloudflare Worker + KV e ativação premium via webhook do Mercado Pago.",
+      "tags": [
+        "ia",
+        "web",
+        "mobile",
+        "pagamentos",
+        "cultura"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/scanini"
+    },
+    {
+      "name": "CLI-PIRATES",
+      "url": "https://github.com/Jp-mainieri/CLI-PIRATES",
+      "description": null,
+      "languages": null,
+      "topics": [],
+      "readme_summary": "Jogo de combate naval em tempo real, 100% no terminal, usando apenas a biblioteca padrão do Python (3.10+). Navios com dificuldades diferentes e comandos de leme, velas e canhões.",
+      "tags": [
+        "jogos",
+        "cultura"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/CLI-PIRATES"
+    },
+    {
+      "name": "PI_II_ES_TIME_15",
+      "url": "https://github.com/Jp-mainieri/PI_II_ES_TIME_15",
+      "description": "Projeto Integrador 2 do curso de engenharia de software da PUC-Campinas",
+      "languages": [
+        "JavaScript 33.7%",
+        "TypeScript 28.3%",
+        "HTML 17.8%",
+        "CSS 17%",
+        "PLSQL 3.2%"
+      ],
+      "topics": [],
+      "readme_summary": "Projeto NotaDez: sistema web para docentes do ensino superior gerenciarem notas acadêmicas (instituições, cursos, disciplinas, turmas, alunos, notas por componente e média final automática), substituindo planilhas.",
+      "tags": [
+        "educacao",
+        "web",
+        "gestao",
+        "dados"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/PI_II_ES_TIME_15"
+    },
+    {
+      "name": "VizioAI",
+      "url": "https://github.com/Jp-mainieri/VizioAI",
+      "description": "Revolucionando a acessibilidade na navegação pela internet",
+      "languages": [
+        "JavaScript 66.4%",
+        "HTML 33.6%"
+      ],
+      "topics": [],
+      "readme_summary": "O README repete a descrição: projeto voltado à acessibilidade na navegação pela internet.",
+      "tags": [
+        "ia",
+        "web",
+        "acessibilidade"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/VizioAI"
+    },
+    {
+      "name": "PI_01_2025",
+      "url": "https://github.com/Jp-mainieri/PI_01_2025",
+      "description": "Desenvolver um projeto para analisar a sustentabilidade pessoal, dando sua classificação, de acordo com os dados inseridos por cada usuario",
+      "languages": [
+        "Python 100%"
+      ],
+      "topics": [],
+      "readme_summary": "Projeto Integrador (Eng. de Software, PUC-Campinas 2025): sistema em Python que classifica e monitora a sustentabilidade diária de uma pessoa a partir dos dados inseridos. Fork com 1 commit próprio à frente do original.",
+      "tags": [
+        "ambiente",
+        "dados"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/PI_01_2025"
+    },
+    {
+      "name": "puccamp-acessor",
+      "url": "https://github.com/Jp-mainieri/puccamp-acessor",
+      "description": "Acessor financeiro de alunos universitários - DESAFIO 01 LIGA DE TI PUC CAMPINAS - 27/08/2026",
+      "languages": [
+        "TypeScript 99.1%",
+        "Other 0.9%"
+      ],
+      "topics": [],
+      "readme_summary": "README é o modelo padrão do Next.js (create-next-app); a descrição informa um assessor financeiro para alunos universitários, feito para o Desafio 01 da Liga de TI da PUC-Campinas.",
+      "tags": [
+        "pagamentos",
+        "educacao",
+        "web"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/puccamp-acessor"
+    },
+    {
+      "name": "caronas",
+      "url": "https://github.com/Jp-mainieri/caronas",
+      "description": "Site simples em react (vite) para registrar caronas mensais e gerando uma nota com o valor a ser recebido, substituindo uma tabela no excel",
+      "languages": [
+        "TypeScript 54.8%",
+        "SCSS 39.2%",
+        "JavaScript 3.7%",
+        "HTML 2.3%"
+      ],
+      "topics": [],
+      "readme_summary": "README é o modelo padrão do React + TypeScript + Vite; a descrição informa um site para registrar caronas mensais e gerar uma nota com o valor a receber.",
+      "tags": [
+        "web",
+        "pagamentos",
+        "logistica",
+        "gestao"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/caronas"
+    },
+    {
+      "name": "spiaggia",
+      "url": "https://github.com/Jp-mainieri/spiaggia",
+      "description": "Site para casas de praia de aluguel.",
+      "languages": null,
+      "topics": [],
+      "readme_summary": "README é o modelo padrão do Next.js (create-next-app); a descrição informa um site de casas de praia para aluguel.",
+      "tags": [
+        "web",
+        "turismo"
+      ],
+      "source_url": "https://github.com/Jp-mainieri/spiaggia"
+    }
+  ],
+  "sources": [
+    "https://github.com/Jp-mainieri",
+    "https://github.com/Jp-mainieri?tab=repositories",
+    "https://github.com/Jp-mainieri?page=2&tab=repositories",
+    "https://github.com/Jp-mainieri/radar-de-hackathons",
+    "https://github.com/Jp-mainieri/hacka-crawl",
+    "https://github.com/Jp-mainieri/NeuraMarket",
+    "https://github.com/Jp-mainieri/relay",
+    "https://github.com/Jp-mainieri/finn",
+    "https://github.com/Jp-mainieri/Jp-mainieri",
+    "https://github.com/Jp-mainieri/CLI-PIRATES",
+    "https://github.com/Jp-mainieri/DBII",
+    "https://github.com/Jp-mainieri/puccamp-acessor",
+    "https://github.com/Jp-mainieri/caronas",
+    "https://github.com/Jp-mainieri/POO",
+    "https://github.com/Jp-mainieri/spiaggia",
+    "https://github.com/Jp-mainieri/trustcheck",
+    "https://github.com/Jp-mainieri/curso.dev",
+    "https://github.com/Jp-mainieri/scanini",
+    "https://github.com/Jp-mainieri/ES-PI3-2026-T2-G04",
+    "https://github.com/Jp-mainieri/learn_flutter",
+    "https://github.com/Jp-mainieri/camera_app",
+    "https://github.com/Jp-mainieri/soccer_team_app",
+    "https://github.com/Jp-mainieri/C",
+    "https://github.com/Jp-mainieri/VizioAI",
+    "https://github.com/Jp-mainieri/PI_01_2025",
+    "https://github.com/Jp-mainieri/PI_II_ES_TIME_15",
+    "https://github.com/Jp-mainieri/WebDev",
+    "https://github.com/Jp-mainieri/TF-Estrutura",
+    "https://github.com/Jp-mainieri/TF-Algoritmos",
+    "https://github.com/Jp-mainieri/Botstrap_web",
+    "https://github.com/Jp-mainieri/PYTHON",
+    "https://github.com/Jp-mainieri/TrackerGastos",
+    "https://github.com/Jp-mainieri/MySQL",
+    "https://github.com/Jp-mainieri/trustcheck/tree/main/src"
+  ]
+}

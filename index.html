@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Radar de Hackathons</title>
+<style>
+:root{
+  --bg:#f6f8f7;--surface:#ffffff;--surface-2:#eef3f0;--text:#14201a;--muted:#5b6b62;
+  --border:#dbe4de;--accent:#16a34a;--accent-strong:#15803d;--accent-soft:#dcfce7;--on-accent:#ffffff;
+  --danger:#dc2626;--danger-soft:#fee2e2;--warn:#b45309;--shadow:0 1px 2px rgba(0,0,0,.05),0 4px 16px rgba(0,0,0,.05);
+  --radius:16px;--radius-sm:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0c1210;--surface:#141c18;--surface-2:#1b2620;--text:#e6efe9;--muted:#93a69b;
+    --border:#26332c;--accent:#22c55e;--accent-strong:#4ade80;--accent-soft:#12331f;--on-accent:#04140a;
+    --danger:#f87171;--danger-soft:#3a1717;--warn:#fbbf24;--shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--accent-strong)}
+.wrap{max-width:1180px;margin:0 auto;padding:16px}
+header.top{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.top img{width:56px;height:56px;border-radius:50%;border:2px solid var(--accent);background:var(--surface-2)}
+.top h1{font-size:1.3rem;margin:0;line-height:1.2}
+.top h1 span{color:var(--accent)}
+.top .who{font-size:.95rem;color:var(--muted)}
+.top .who a{font-weight:600}
+.top .meta{font-size:.8rem;color:var(--muted);width:100%}
+@media (min-width:640px){.top .meta{width:auto;margin-left:auto;text-align:right}}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:18px 0 10px}
+.toolbar h2{font-size:1.05rem;margin:0 auto 0 0}
+.chip-btn{appearance:none;border:1px solid var(--border);background:var(--surface);color:var(--text);padding:7px 14px;border-radius:999px;font:inherit;font-size:.9rem;cursor:pointer}
+.chip-btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600}
+.layout{display:grid;gap:18px}
+@media (min-width:960px){.layout{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);align-items:start}.side{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}}
+.feed{display:grid;gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.card.active{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft),var(--shadow)}
+.card h3{margin:0 0 4px;font-size:1.1rem;line-height:1.3}
+.org{color:var(--muted);font-size:.88rem;margin:0 0 10px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 14px;margin:0 0 10px;font-size:.88rem}
+.facts div{min-width:0}
+.facts dt{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.04em}
+.facts dd{margin:0;overflow-wrap:anywhere}
+.na{color:var(--muted);font-style:italic}
+.desc{margin:0 0 10px;font-size:.93rem}
+.badge{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+.badge.fmt{background:var(--accent-soft);color:var(--accent-strong);border-color:transparent}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;padding:0;list-style:none}
+.tag{font-size:.75rem;padding:2px 8px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);color:var(--muted)}
+.tag.hit{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600}
+.countdown{display:inline-flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums;font-weight:700;font-size:.9rem;padding:4px 10px;border-radius:var(--radius-sm);background:var(--accent-soft);color:var(--accent-strong);margin:0 0 10px}
+.countdown.urgent{background:var(--danger-soft);color:var(--danger)}
+.countdown.closed{background:var(--surface-2);color:var(--muted)}
+.matches{border-top:1px dashed var(--border);padding-top:10px;margin-top:4px}
+.matches h4{margin:0 0 8px;font-size:.85rem;color:var(--muted);font-weight:600}
+.match{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:center;margin-bottom:8px;font-size:.88rem}
+.match a{text-decoration:none;color:var(--text);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.match .pct{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent-strong)}
+.bar{grid-column:1/-1;height:6px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:999px;transition:width .4s}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.btn{appearance:none;display:inline-block;text-decoration:none;font:inherit;font-size:.88rem;font-weight:600;padding:8px 14px;border-radius:var(--radius-sm);border:1px solid var(--accent);cursor:pointer;background:var(--accent);color:var(--on-accent)}
+.btn.ghost{background:transparent;color:var(--accent-strong)}
+.src{font-size:.8rem;color:var(--muted);margin-left:auto}
+.side h2{font-size:1.05rem;margin:0 0 10px}
+.side .hint{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.projects{display:grid;gap:12px}
+.proj{padding:14px}
+.proj h3{font-size:1rem}
+.proj .score{float:right;font-weight:700;color:var(--accent-strong);font-variant-numeric:tabular-nums}
+.proj ul.hx{margin:6px 0 0;padding-left:18px;font-size:.85rem}
+.proj ul.hx li{margin:2px 0}
+.small{font-size:.82rem;color:var(--muted)}
+.state{text-align:center;padding:40px 16px}
+.spinner{width:36px;height:36px;margin:0 auto 12px;border:4px solid var(--surface-2);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.state.error{border-color:var(--danger)}
+.state.error h2{color:var(--danger)}
+footer{margin:24px 0 8px;font-size:.8rem;color:var(--muted)}
+footer details{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px}
+footer ul{padding-left:18px;overflow-wrap:anywhere}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top" id="header">
+    <img id="avatar" alt="" hidden>
+    <div>
+      <h1><span>Radar</span> de Hackathons</h1>
+      <div class="who" id="who">carregando perfil…</div>
+    </div>
+    <div class="meta" id="collected"></div>
+  </header>
+
+  <section id="loading" class="card state" aria-live="polite">
+    <div class="spinner" aria-hidden="true"></div>
+    <p>Carregando dados coletados…</p>
+  </section>
+
+  <section id="error" class="card state error" hidden role="alert">
+    <h2>Não foi possível carregar os dados</h2>
+    <p id="errorMsg"></p>
+    <p class="small">Verifique se <code>data/hackathons.json</code> e <code>data/projects.json</code> existem e não estão vazios. Se abriu o arquivo direto do disco, sirva a pasta com um servidor HTTP local.</p>
+  </section>
+
+  <main id="app" hidden>
+    <div class="toolbar">
+      <h2 id="feedTitle">Hackathons abertos</h2>
+      <div role="group" aria-label="Filtrar por formato" id="filters">
+        <button class="chip-btn" data-filter="all" aria-pressed="true">Todos</button>
+        <button class="chip-btn" data-filter="online" aria-pressed="false">Online</button>
+        <button class="chip-btn" data-filter="presencial" aria-pressed="false">Presencial</button>
+      </div>
+    </div>
+    <div class="layout">
+      <section class="feed" id="feed" aria-live="polite"></section>
+      <aside class="side card" id="side">
+        <h2>Vitrine de projetos</h2>
+        <p class="hint" id="sideHint">Clique em “Destacar na vitrine” em um hackathon para reordenar os projetos por afinidade.</p>
+        <div class="projects" id="projects"></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="footer" hidden>
+    <details>
+      <summary>Fontes consultadas na coleta</summary>
+      <ul id="sources"></ul>
+    </details>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const NA = '<span class="na">não informado</span>';
+  const state = { hackathons: [], projects: [], profile: null, filter: 'all', highlight: null };
+
+  const esc = v => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const val = v => (v === null || v === undefined || v === '' || (Array.isArray(v) && !v.length)) ? NA : esc(Array.isArray(v) ? v.join(', ') : v);
+  const safeUrl = u => { try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; } };
+
+  function affinity(project, hack) {
+    const pt = project.tags || [], ht = new Set(hack.tags || []);
+    const common = pt.filter(t => ht.has(t));
+    const score = common.length && pt.length ? Math.min(98, Math.round(40 + 60 * common.length / pt.length)) : 0;
+    return { score, common };
+  }
+
+  function normFormat(f) {
+    const s = (f || '').toLowerCase();
+    if (s.startsWith('online')) return 'online';
+    if (s.startsWith('presencial')) return 'presencial';
+    if (s.startsWith('h')) return 'hibrido';
+    return null;
+  }
+  const fmtLabel = { online: 'Online', presencial: 'Presencial', hibrido: 'Híbrido' };
+
+  function deadlineMs(h) { const t = h.registration_deadline ? Date.parse(h.registration_deadline) : NaN; return isNaN(t) ? null : t; }
+
+  function formatDate(iso) {
+    const t = Date.parse(iso); if (isNaN(t)) return esc(iso);
+    return new Date(t).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  }
+
+  function countdownText(ms) {
+    const diff = ms - Date.now();
+    if (diff <= 0) return { text: 'encerrado', cls: 'closed' };
+    const d = Math.floor(diff / 864e5), h = Math.floor(diff / 36e5) % 24, m = Math.floor(diff / 6e4) % 60, s = Math.floor(diff / 1e3) % 60;
+    const pad = n => String(n).padStart(2, '0');
+    return { text: `${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`, cls: diff < 3 * 864e5 ? 'urgent' : '' };
+  }
+
+  function tickCountdowns() {
+    document.querySelectorAll('[data-deadline]').forEach(el => {
+      const { text, cls } = countdownText(+el.dataset.deadline);
+      el.querySelector('b').textContent = text;
+      el.className = 'countdown ' + cls;
+      el.querySelector('span').textContent = cls === 'closed' ? 'Inscrições:' : 'Inscrições encerram em';
+    });
+  }
+
+  function tagList(tags, hits) {
+    if (!tags || !tags.length) return '';
+    const set = new Set(hits || []);
+    return `<ul class="tags">${tags.map(t => `<li class="tag${set.has(t) ? ' hit' : ''}">${esc(t)}</li>`).join('')}</ul>`;
+  }
+
+  function sortedHackathons() {
+    return [...state.hackathons].sort((a, b) => {
+      const da = deadlineMs(a), db = deadlineMs(b);
+      const closedA = da !== null && da < Date.now(), closedB = db !== null && db < Date.now();
+      if (closedA !== closedB) return closedA ? 1 : -1;
+      if (da === null && db === null) return a.name.localeCompare(b.name);
+      if (da === null) return 1; if (db === null) return -1;
+      return da - db;
+    });
+  }
+
+  function renderFeed() {
+    const list = sortedHackathons().filter(h => { const f = normFormat(h.format); return state.filter === 'all' || f === state.filter || f === 'hibrido'; });
+    $('#feedTitle').textContent = `Hackathons abertos (${list.length})`;
+    if (!list.length) { $('#feed').innerHTML = '<div class="card state"><p>Nenhum hackathon para este filtro.</p></div>'; return; }
+    $('#feed').innerHTML = list.map(h => {
+      const fmt = normFormat(h.format);
+      const dl = deadlineMs(h);
+      const top = state.projects.map(p => ({ p, ...affinity(p, h) })).filter(x => x.score > 0)
+        .sort((a, b) => b.score - a.score || b.common.length - a.common.length).slice(0, 3);
+      const url = safeUrl(h.url), src = safeUrl(h.source_url);
+      const active = state.highlight === h.id;
+      return `<article class="card${active ? ' active' : ''}" id="h-${esc(h.id)}">
+        <h3>${esc(h.name)}</h3>
+        <p class="org">${h.organizer ? 'por ' + esc(h.organizer) : 'organizador: ' + NA} ${fmt ? `<span class="badge fmt">${fmtLabel[fmt]}</span>` : `<span class="badge">formato não informado</span>`}</p>
+        ${dl !== null ? `<div class="countdown" data-deadline="${dl}"><span>Inscrições encerram em</span> <b></b></div>` : ''}
+        <dl class="facts">
+          <div><dt>Local</dt><dd>${val(h.where)}</dd></div>
+          <div><dt>Inscrições até</dt><dd>${h.registration_deadline ? formatDate(h.registration_deadline) : NA}</dd></div>
+          <div><dt>Datas do evento</dt><dd>${val(h.event_dates)}</dd></div>
+          <div><dt>Prêmio</dt><dd>${val(h.prize)}</dd></div>
+          <div><dt>Quem pode participar</dt><dd>${val(h.eligibility)}</dd></div>
+        </dl>
+        <p class="desc">${val(h.description)}</p>
+        ${tagList(h.tags)}
+        <div class="matches">
+          <h4>Seus projetos mais compatíveis</h4>
+          ${top.length ? top.map(x => `<div class="match">
+              <a href="${esc(safeUrl(x.p.url) || '#')}" target="_blank" rel="noopener" title="Tags em comum: ${esc(x.common.join(', '))}">${esc(x.p.name)}</a>
+              <span class="pct">${x.score}%</span>
+              <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${x.score}" aria-label="Afinidade de ${esc(x.p.name)}"><i style="width:${x.score}%"></i></div>
+            </div>`).join('') : '<p class="small">Nenhum projeto com tags em comum.</p>'}
+        </div>
+        <div class="actions">
+          ${url ? `<a class="btn" href="${esc(url)}" target="_blank" rel="noopener">Ver evento</a>` : ''}
+          <button class="btn ghost" data-highlight="${esc(h.id)}" aria-pressed="${active}">${active ? 'Destacado na vitrine' : 'Destacar na vitrine'}</button>
+          ${src ? `<a class="src" href="${esc(src)}" target="_blank" rel="noopener">fonte</a>` : ''}
+        </div>
+      </article>`;
+    }).join('');
+    tickCountdowns();
+  }
+
+  function renderProjects() {
+    const hack = state.hackathons.find(h => h.id === state.highlight) || null;
+    let items = state.projects.map(p => ({ p, ...(hack ? affinity(p, hack) : { score: null, common: [] }) }));
+    if (hack) items.sort((a, b) => b.score - a.score || a.p.name.localeCompare(b.p.name));
+    $('#sideHint').innerHTML = hack
+      ? `Ordenado por afinidade com <strong>${esc(hack.name)}</strong>. Tags em comum em verde. <button class="chip-btn" id="clearHl">Limpar</button>`
+      : 'Clique em “Destacar na vitrine” em um hackathon para reordenar os projetos por afinidade.';
+    $('#projects').innerHTML = items.map(({ p, score, common }) => {
+      const compat = state.hackathons.map(h => ({ h, ...affinity(p, h) })).filter(x => x.score > 0).sort((a, b) => b.score - a.score);
+      return `<article class="card proj">
+        ${score !== null ? `<span class="score">${score}%</span>` : ''}
+        <h3><a href="${esc(safeUrl(p.url) || '#')}" target="_blank" rel="noopener">${esc(p.name)}</a></h3>
+        <p class="small">${val(p.description || p.readme_summary)}</p>
+        <p class="small">Linguagens: ${val(p.languages)}</p>
+        ${tagList(p.tags, common)}
+        <div class="small"><strong>Hackathons compatíveis (${compat.length})</strong></div>
+        ${compat.length ? `<ul class="hx">${compat.map(x => `<li><a href="#h-${esc(x.h.id)}">${esc(x.h.name)}</a> — ${x.score}%</li>`).join('')}</ul>` : '<p class="small">Nenhum no momento.</p>'}
+      </article>`;
+    }).join('');
+  }
+
+  function renderHeader(profile, collectedAt) {
+    if (profile) {
+      if (safeUrl(profile.avatar_url)) { $('#avatar').src = profile.avatar_url; $('#avatar').alt = 'Avatar de ' + (profile.name || profile.login); $('#avatar').hidden = false; }
+      const link = safeUrl(profile.url);
+      $('#who').innerHTML = `${esc(profile.name || profile.login)} · ${link ? `<a href="${esc(link)}" target="_blank" rel="noopener">@${esc(profile.login)} no GitHub</a>` : '@' + esc(profile.login)}`;
+    } else $('#who').innerHTML = 'perfil: ' + NA;
+    $('#collected').textContent = collectedAt ? `dados coletados em ${formatDate(collectedAt)}` : '';
+  }
+
+  function renderSources(...lists) {
+    const all = [...new Set(lists.flat().filter(Boolean))];
+    $('#sources').innerHTML = all.map(u => { const s = safeUrl(u); return `<li>${s ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s)}</a>` : esc(u)}</li>`; }).join('');
+    $('#footer').hidden = !all.length;
+  }
+
+  function bind() {
+    $('#filters').addEventListener('click', e => {
+      const b = e.target.closest('[data-filter]'); if (!b) return;
+      state.filter = b.dataset.filter;
+      document.querySelectorAll('[data-filter]').forEach(x => x.setAttribute('aria-pressed', x === b));
+      renderFeed();
+    });
+    $('#feed').addEventListener('click', e => {
+      const b = e.target.closest('[data-highlight]'); if (!b) return;
+      state.highlight = state.highlight === b.dataset.highlight ? null : b.dataset.highlight;
+      renderFeed(); renderProjects();
+      if (state.highlight && matchMedia('(max-width: 959px)').matches) $('#side').scrollIntoView({ behavior: 'smooth' });
+    });
+    $('#side').addEventListener('click', e => { if (e.target.id === 'clearHl') { state.highlight = null; renderFeed(); renderProjects(); } });
+  }
+
+  async function getJSON(path) {
+    const r = await fetch(path, { cache: 'no-store' });
+    if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
+    const text = await r.text();
+    if (!text.trim()) throw new Error(`${path} está vazio`);
+    try { return JSON.parse(text); } catch { throw new Error(`${path} não é um JSON válido`); }
+  }
+
+  async function init() {
+    try {
+      const [hx, pj] = await Promise.all([getJSON('data/hackathons.json'), getJSON('data/projects.json')]);
+      const hackathons = Array.isArray(hx.hackathons) ? hx.hackathons : [];
+      const projects = Array.isArray(pj.projects) ? pj.projects : [];
+      renderHeader(pj.profile || null, hx.collected_at || pj.collected_at);
+      if (!hackathons.length) throw new Error('data/hackathons.json não contém hackathons');
+      if (!projects.length) throw new Error('data/projects.json não contém projetos');
+      state.hackathons = hackathons.map((h, i) => ({ ...h, id: h.id || 'h' + i }));
+      state.projects = projects;
+      renderSources(hx.sources || [], pj.sources || []);
+      bind(); renderFeed(); renderProjects();
+      $('#loading').hidden = true; $('#app').hidden = false;
+      setInterval(tickCountdowns, 1000);
+    } catch (err) {
+      $('#loading').hidden = true;
+      $('#errorMsg').textContent = err.message;
+      $('#error').hidden = false;
+      if ($('#who').textContent.includes('carregando')) $('#who').textContent = '';
+    }
+  }
+  init();
+})();
+</script>
+</body>
+</html>
