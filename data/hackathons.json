@@ -1,0 +1,240 @@
+{
+  "collected_at": "2026-11-07T11:25:56-03:00",
+  "reference_date": "2026-11-07",
+  "notes": "Prazos sem horário na fonte foram registrados como 23:59 (-03:00). Descartados por estarem encerrados ou fora do critério: Agents Hackathon, Low Hack 2026, Hackathon E+, Hackathon STS 2026, IFTech 2026, Hackathon 6.0 Connect, Hackathon de IA da OAB-PR (edição 2025).",
+  "hackathons": [
+    {
+      "id": "hack-brasil-2026",
+      "name": "Hack Brasil 2026",
+      "organizer": "AI TECH SPACE LLC (Comissão Organizadora: Nicolas Silberstein Camara, Nicole Grossmann e Matheus Pagani)",
+      "where": "Online (fase 1); final presencial em São Paulo, com o Google for Startups",
+      "format": "híbrido",
+      "registration_deadline": "2026-11-30T23:59:00-03:00",
+      "event_dates": "Fase online de 04/11 a 30/11/2026; final presencial em 12/12/2026",
+      "prize": "Mais de R$ 1,5 milhão em prêmios e benefícios",
+      "description": "Hackathon nacional e gratuito, com um mês online para o país inteiro e final presencial com o Google for Startups. Cada projeto concorre em uma trilha; até 5 projetos por trilha vão para a final.",
+      "eligibility": "Pessoas físicas com 18 anos ou mais, brasileiras (morando no Brasil ou no exterior) ou estrangeiras residentes no Brasil ou com visto brasileiro válido.",
+      "url": "https://hackbrasil.com",
+      "source_url": "https://hackbrasil.com/regulamento",
+      "tags": [
+        "ambiente",
+        "cultura",
+        "educacao",
+        "saude",
+        "pagamentos",
+        "ciber",
+        "logistica"
+      ]
+    },
+    {
+      "id": "hackies-2026",
+      "name": "HACKIES 2026 – 1º Hackathon do IFF Macaé",
+      "organizer": "Capítulo Estudantil IEEE Industrial Electronics Society (IES) do IFF Campus Macaé, com parceria da BRS Robótica Submarina",
+      "where": "Online (1ª etapa); final no IFF Campus Macaé (RJ)",
+      "format": "híbrido",
+      "registration_deadline": "2026-11-09T17:55:00-03:00",
+      "event_dates": "1ª etapa online de 09 a 13/11/2026; final presencial em 03/12/2026",
+      "prize": "Premiação para as três melhores equipes e certificado para as dez finalistas (valores não informados)",
+      "description": "Competição sobre tecnologia, inovação e soluções para veículos operados remotamente (ROVs) usados em operações submarinas.",
+      "eligibility": "Estudantes, em equipes de 2 a 3 integrantes; inscrição individual no Integra IFF.",
+      "url": "https://portal1.iff.edu.br/nossos-campi/macae/noticias/inscricoes-abertas-para-hackathon-do-iff-macae",
+      "source_url": "https://portal1.iff.edu.br/nossos-campi/macae/noticias/inscricoes-abertas-para-hackathon-do-iff-macae",
+      "tags": [
+        "iot",
+        "ambiente"
+      ]
+    },
+    {
+      "id": "unicet-2026",
+      "name": "II Hackathon Estudantil UNI-CET",
+      "organizer": "Centro Universitário Tecnológico de Teresina (UNI-CET)",
+      "where": "UNI-CET, Teresina (PI)",
+      "format": "presencial",
+      "registration_deadline": "2026-11-10T23:59:00-03:00",
+      "event_dates": "Sorteio dos temas em 13/11/2026; pitches em 27 e 28/11/2026",
+      "prize": "1º lugar R$ 3.000; 2º R$ 2.000; 3º R$ 1.000",
+      "description": "Tema “Soluções jovens para a Indústria e o Comércio 5.0: tecnologia, criatividade e sustentabilidade”: comércio inteligente, indústria sustentável, educação do futuro, cidades inteligentes e consumo consciente.",
+      "eligibility": "Alunos do Ensino Médio (regular ou técnico) de escolas públicas e privadas de Teresina; até 4 equipes por escola, com até 5 alunos e 1 professor orientador.",
+      "url": "https://unicet.edu.br/noticia/uni-cet-abre-inscricoes-para-o-ii-hackathon-estudantil-1379",
+      "source_url": "https://unicet.edu.br/noticia/uni-cet-abre-inscricoes-para-o-ii-hackathon-estudantil-1379",
+      "tags": [
+        "educacao",
+        "ambiente",
+        "gestao",
+        "ia",
+        "iot"
+      ]
+    },
+    {
+      "id": "pucpr-ia-2026",
+      "name": "Hackathon PUCPR: IA Aplicada à Educação",
+      "organizer": "PUCPR (Diretoria de Tecnologia e Transformação Digital e Assessoria de Tecnologia), com apoio do Google",
+      "where": "PUCPR Câmpus Curitiba (PR)",
+      "format": "presencial",
+      "registration_deadline": "2026-11-13T23:59:00-03:00",
+      "event_dates": "28 e 29/11/2026, das 9h às 9h do dia seguinte",
+      "prize": "Três vagas de estágio em projetos de IA da PUCPR; equipe vencedora também ganha visita ao Google",
+      "description": "Desafia estudantes de graduação a desenvolver soluções de inteligência artificial para desafios da educação superior, com mentoria.",
+      "eligibility": "Estudantes de graduação da PUCPR (presencial ou EAD) que não estejam no último ano; 42 vagas em 14 equipes de três.",
+      "url": "https://www.pucpr.br/noticias/destaque/pucpr-abre-inscricoes-para-hackathon-de-inteligencia-artificial-em-parceria-com-o-google/",
+      "source_url": "https://www.pucpr.br/noticias/destaque/pucpr-abre-inscricoes-para-hackathon-de-inteligencia-artificial-em-parceria-com-o-google/",
+      "tags": [
+        "ia",
+        "educacao"
+      ]
+    },
+    {
+      "id": "sao-luis-futuro-2026",
+      "name": "I Hackathon São Luís do Futuro",
+      "organizer": "Software House UNDB, em parceria com a SEMISPE",
+      "where": "UNDB - Campus Renascença, São Luís (MA)",
+      "format": "presencial",
+      "registration_deadline": "2026-11-13T23:59:00-03:00",
+      "event_dates": "13 a 15/11/2026",
+      "prize": null,
+      "description": "Maratona de inovação para transformar desafios reais de São Luís em soluções tecnológicas pensando na cidade do futuro, com etapas de ideação, construção, validação, prototipação e apresentação.",
+      "eligibility": "Estudantes",
+      "url": "https://www.sympla.com.br/evento/i-hackathon-sao-luis-do-futuro-undb-semispe/3583201",
+      "source_url": "https://www.sympla.com.br/evento/i-hackathon-sao-luis-do-futuro-undb-semispe/3583201",
+      "tags": [
+        "gestao",
+        "educacao"
+      ]
+    },
+    {
+      "id": "jovem-programador-2026",
+      "name": "Hackathon Jovem Programador 2026",
+      "organizer": "SENAC Santa Catarina e SEPROSC",
+      "where": "Online",
+      "format": "online",
+      "registration_deadline": "2026-11-19T23:59:00-03:00",
+      "event_dates": "Online a partir de 28/11/2026 (abertura); análise das inscrições em 26/11/2026",
+      "prize": null,
+      "description": "Atividade extracurricular do Programa Jovem Programador 2026 que estimula os alunos a desenvolver soluções para problemas complexos. A edição anterior destacou projetos de saúde, educação e bem-estar.",
+      "eligibility": "Alunos regularmente matriculados no Programa Jovem Programador 2026, em equipes de 4 a 7 integrantes; inscrição gratuita.",
+      "url": "https://www.jovemprogramador.com.br/hackathon",
+      "source_url": "https://www.jovemprogramador.com.br/hackathon",
+      "tags": [
+        "educacao",
+        "saude"
+      ]
+    },
+    {
+      "id": "startub-2026",
+      "name": "Hackathon StartUB 2026",
+      "organizer": null,
+      "where": "Unibalsas - Centro Universitário de Balsas, Balsas (MA)",
+      "format": "presencial",
+      "registration_deadline": "2026-11-06T23:59:00-03:00",
+      "event_dates": "09/11/2026 19h a 13/11/2026 21h",
+      "prize": null,
+      "description": "Evento com workshops e atividades práticas para desenvolver soluções inovadoras para os desafios apresentados; 80 vagas, inscrição individual e equipes formadas no evento. Inscrições já encerradas, mas o evento ainda vai acontecer.",
+      "eligibility": null,
+      "url": "https://www.sympla.com.br/evento/hackathon-startub-2026/3633306",
+      "source_url": "https://www.sympla.com.br/evento/hackathon-startub-2026/3633306",
+      "tags": [
+        "gestao",
+        "educacao"
+      ]
+    },
+    {
+      "id": "inovaagro-ms-2026",
+      "name": "1º Hackathon Regional InovaAgro MS 2026",
+      "organizer": "Prefeitura de Chapadão do Sul/MS (SEDEMA e AGIPEQ), com a ACE Chapadão do Sul",
+      "where": "AMPASUL, BR-060 km 10, Chapadão do Sul (MS)",
+      "format": "presencial",
+      "registration_deadline": null,
+      "event_dates": "13 a 15/11/2026",
+      "prize": "Contribuições de apoiadores (dinheiro, bens ou benefícios como tablets, consultorias e visitas técnicas); valores não informados",
+      "description": "Até 150 participantes em equipes desenvolvendo soluções inovadoras para problemas reais do setor agropecuário.",
+      "eligibility": null,
+      "url": "https://www.chapadaodosul.ms.gov.br/portal/noticias/0/3/2975/chapadao-do-sul-abre-chamamento-publico-para-apoiadores-do-1-hackathon-regional-inovaagro-ms-2026",
+      "source_url": "https://www.chapadaodosul.ms.gov.br/portal/noticias/0/3/2975/chapadao-do-sul-abre-chamamento-publico-para-apoiadores-do-1-hackathon-regional-inovaagro-ms-2026",
+      "tags": [
+        "ambiente",
+        "gestao"
+      ]
+    },
+    {
+      "id": "kiroween-2026",
+      "name": "Kiroween 2026",
+      "organizer": "Kiro (via Devpost)",
+      "where": "Online",
+      "format": "online",
+      "registration_deadline": "2026-12-04T19:00:00-03:00",
+      "event_dates": "Período de submissão de 30/10 a 04/12/2026",
+      "prize": "US$ 100.000 em dinheiro",
+      "description": "Hackathon online para mostrar como usar o Kiro: agentes, specs, hooks, steering, Kiro powers e MCP. Só projetos novos; times de até 3 pessoas.",
+      "eligibility": "Maiores de idade no país de residência; nenhum país excluído.",
+      "url": "https://kiroween.devpost.com/",
+      "source_url": "https://kiroween.devpost.com/",
+      "tags": [
+        "ia",
+        "web"
+      ]
+    },
+    {
+      "id": "paypal-ai-2026",
+      "name": "Build What's Next with PayPal and AI",
+      "organizer": "PayPal (via Devpost)",
+      "where": "Online",
+      "format": "online",
+      "registration_deadline": "2026-11-12T17:00:00-03:00",
+      "event_dates": "Submissões até 12/11/2026, 15h EST",
+      "prize": "US$ 67.500 em dinheiro (US$ 69.750 em prêmios totais)",
+      "description": "Hackathon global online para desenvolvedores, designers, fundadores e estudantes criarem algo novo usando PayPal e IA.",
+      "eligibility": "Maiores de idade no país de residência; todos os países, exceto as exceções padrão.",
+      "url": "https://paypalaihackathon.devpost.com/",
+      "source_url": "https://paypalaihackathon.devpost.com/",
+      "tags": [
+        "pagamentos",
+        "ia",
+        "web"
+      ]
+    }
+  ],
+  "sources": [
+    "https://hackbrasil.com",
+    "busca Firecrawl: hackathon inscrições abertas novembro 2026",
+    "busca Firecrawl: hackathon 2026 Brasil inscrições até dezembro",
+    "busca Firecrawl: hackathon sympla 2026",
+    "busca Firecrawl: devpost hackathon Brazil 2026",
+    "busca Firecrawl: universidade hackathon 2026 inscrições edital",
+    "busca Firecrawl: hackathon inscrições abertas",
+    "https://hackbrasil.com/regulamento",
+    "busca Firecrawl: hackathon dezembro 2026 inscrições abertas",
+    "https://hackbrasil.com/inscricao",
+    "busca Firecrawl: hackathon online inscrições abertas Brasil 2026",
+    "busca Firecrawl: hackathon inteligência artificial inscrições abertas novembro",
+    "busca Firecrawl: hackathon prefeitura inscrições novembro 2026",
+    "https://portal1.iff.edu.br/nossos-campi/macae/noticias/inscricoes-abertas-para-hackathon-do-iff-macae",
+    "https://www.pucpr.br/noticias/destaque/pucpr-abre-inscricoes-para-hackathon-de-inteligencia-artificial-em-parceria-com-o-google/",
+    "https://www.ibracon.com.br/portal-do-conhecimento/conteudos/inscreva-se-na-5a-edicao-do-hackathon-do-ibracon/",
+    "https://unicet.edu.br/noticia/uni-cet-abre-inscricoes-para-o-ii-hackathon-estudantil-1379",
+    "https://www.jovemprogramador.com.br/hackathon",
+    "https://hackathonbrasil.com.br/low-hack/",
+    "https://hackathonbrasil.com.br/hackathon-emais/",
+    "https://hackathonbrasil.com.br/",
+    "https://unifor.br/-/unifor-hub-abre-inscricoes-para-o-hackathon-da-m-dias-branco-2026",
+    "https://www.mackenzie.br/universidade/unidades-academicas/ee/hackathon2026",
+    "https://devpost.com/hackathons",
+    "https://dev.events/hackathons/SA/BR/ai",
+    "https://agents-hackathon.devpost.com/",
+    "busca Firecrawl: hackathon even3 2026",
+    "busca Firecrawl: sympla hackathon novembro 2026 presencial",
+    "busca Firecrawl: devpost online hackathon open November 2026 all countries",
+    "https://portal.oabpr.org.br/noticias/estao-abertas-as-inscricoes-para-o-hackathon-de-inteligencia-artificial-da-oab-pr",
+    "https://www.sympla.com.br/evento/hackathon-startub-2026/3633306",
+    "https://www.sympla.com.br/evento/i-hackathon-sao-luis-do-futuro-undb-semispe/3583201",
+    "https://stssebrae.com.br/hackathon/",
+    "https://www.chapadaodosul.ms.gov.br/portal/noticias/0/3/2975/chapadao-do-sul-abre-chamamento-publico-para-apoiadores-do-1-hackathon-regional-inovaagro-ms-2026",
+    "https://www.even3.com.br/hackathon-6-0-connect-inovacao-e-conexao-615269/",
+    "https://www.fm.usp.br/dvacad/portal/hackathon-para-residentes",
+    "https://www.even3.com.br/iftech-2026-768290/",
+    "https://integra.iff.edu.br/institucional/eventos/hackies-2026",
+    "https://paypal-ai-hackathon-2026.devpost.com/",
+    "https://kiroween.devpost.com/",
+    "https://www.ibracon.com.br/5hackathon/",
+    "https://paypalaihackathon.devpost.com/"
+  ]
+}
