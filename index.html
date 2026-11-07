@@ -184,7 +184,10 @@ footer ul{padding-left:18px;overflow-wrap:anywhere}
     $('#feedTitle').textContent = `Hackathons (${list.length}) · ${openCount} com inscrições abertas ou sem prazo informado`;
   }
 
+  const closedSig = () => state.hackathons.filter(h => { const d = deadlineMs(h); return d !== null && d <= Date.now(); }).map(h => h.id).join(',');
+
   function tickCountdowns() {
+    if (state.closedSig !== undefined && closedSig() !== state.closedSig) { renderFeed(); return; }
     updateFeedTitle();
     document.querySelectorAll('[data-deadline]').forEach(el => {
       const { text, cls } = countdownText(+el.dataset.deadline);
@@ -214,6 +217,7 @@ footer ul{padding-left:18px;overflow-wrap:anywhere}
   function renderFeed() {
     const list = sortedHackathons().filter(h => { const f = normFormat(h.format); return state.filter === 'all' || f === state.filter || f === 'hibrido'; });
     state.visible = list;
+    state.closedSig = closedSig();
     updateFeedTitle();
     if (!list.length) { $('#feed').innerHTML = '<div class="card state"><p>Nenhum hackathon para este filtro.</p></div>'; return; }
     $('#feed').innerHTML = list.map(h => {
